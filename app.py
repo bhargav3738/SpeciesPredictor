@@ -10,7 +10,7 @@ scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 @app.route('/', methods=['GET', 'POST'])
 def predict():
-    prediction_text = ""  # Empty prediction text initially
+    prediction_text = ""  
     if request.method == 'POST':
         try:
             features = [float(request.form[f'feature{i}']) for i in range(1, 7)]
